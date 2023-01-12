@@ -1,0 +1,129 @@
+<h1>Maadevaa</h1>
+<h1 class="bg-secondary">{{ title }}</h1>
+<div>
+  <span class="op-badge-daypart color8EB537">DA</span>
+</div>
+<!-- <app-tasks></app-tasks>
+
+<button [hidden]="false" (click)="buttnClick($event)">Click Me here!</button>
+<div *ngIf="showMsg" [ngStyle]="{ color: color }">Om Har Har Mahadev.</div>
+<router-outlet></router-outlet>
+
+<h4>ng-switch Example.</h4>
+<div [ngSwitch]="switchVal">
+  <div *ngSwitchCase="1">Value passed is :1</div>
+  <div *ngSwitchCase="2">Value passed is :2</div>
+  <div *ngSwitchCase="3">Value passed is :3</div>
+  <div *ngSwitchDefault>This is Default value:"Maadevaa"</div>
+</div>
+
+<h4>ng- Fors Example.</h4>
+<table class="table">
+  <tr>
+    <th>userId</th>
+    <th>userName</th>
+    <th>Index</th>
+    <th>First</th>
+    <th>Last</th>
+    <th>Even</th>
+    <th>Odd</th>
+  </tr>
+  <tr
+    *ngFor="
+      let user of users;
+      index as i;
+      first as f;
+      last as l;
+      even as e;
+      odd as o
+    "
+  >
+    <td>{{ user.userId }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ i }}</td>
+    <td>{{ f }}</td>
+    <td>{{ l }}</td>
+    <td>{{ e }}</td>
+    <td>{{ o }}</td>
+  </tr>
+</table>
+
+<a [ngStyle]="{ color: colorVal, 'background-color': 'grey' }" href="0">
+  Learning Angular is really Good.
+</a>
+
+<div [ngClass]="'one'">Learning ngClass</div>
+<div [ngClass]="'two'">Learning ngClass two.</div>
+<div [ngClass]="{ one: true, two: true }">Learning Ang.</div>
+
+Binding :
+<div>Interploation :{{ users[0].name }}</div>
+property Binding :
+<div [ngStyle]="{ color: colorVal }">Color.</div>
+
+<div [ngClass]="'c1'">Setting color of the text!.</div>
+
+<input [placeholder]="placeValue" />
+
+<a
+  [href]="hrefVal"
+  [attr.updateLink]="updatedLink"
+  [attr.data-link]="updatedLink"
+  >Google</a
+>
+<br />
+<br />
+<button (click)="showAlert($event)">Event Binding.</button>
+<p>
+  <input (focus)="ConsoleLog()" />
+</p>
+
+<h5>Two-Way DataBinding...</h5>
+
+<input [(ngModel)]="twoWay" />
+<button (click)="readFirstName()">ReadName</button>
+<br />
+<br />
+<div>{{ twoWay }}</div>
+
+<div>{{ user.DOB | date : "MMMM dd yyyy" }}</div>
+<div>{{ user.DOB | date : "short" }}</div>
+<div>{{ user.currency | currency : "INR" : "INR" : "3.0-0" }}</div>
+
+<!-- <div>{{ user.city | highlight : user.city }}</div> -->
+<div [innerHTML]="user.city | highlight : user.city"></div>
+
+<ul>
+  <li *ngFor="let user of userInfo">
+    <div [innerHTML]="user.city | highlight : user.city"></div>
+  </li>
+</ul>
+
+<input [(ngModel)]="userInfo2.contact" />
+<button (click)="formatPhone()">format Phone number</button>
+
+<div id="number">Formated phone No :{{ userInfo2.contact | phoneNumber }}</div>
+-->
+
+<ul>
+  <li>
+    <a href="/products">Products!.</a>
+  </li>
+  <li>
+    <a href="/products-view">Products-view!.</a>
+  </li>
+
+  <li>
+    <a href="/products-edit">products-edit!.</a>
+  </li>
+
+  <li>
+    <a href="/orders">OrdersSet-edit!.</a>
+  </li>
+</ul>
+
+<div class="">
+  <router-outlet></router-outlet>
+</div>
+
+<nav></nav>

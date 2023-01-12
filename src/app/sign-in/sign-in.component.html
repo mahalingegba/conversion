@@ -1,0 +1,127 @@
+<h2>sign-in using Template driven form</h2>
+<div class="container">
+  <form #signInForm="ngForm" (ngSubmit)="loginUser(signInForm)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address:</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        name="emailAdress"
+        ngModel
+        email
+        required
+        #emailAdress="ngModel"
+      />
+      <small
+        id="message"
+        class="form-text text-muted"
+        *ngIf="emailAdress.touched && !emailAdress.valid"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password:</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+        name="password"
+        ngModel
+        required
+        #password="ngModel"
+      />
+      <small
+        id="message"
+        class="form-text text-muted"
+        *ngIf="password.touched && !password.valid"
+        >Password Required.</small
+      >
+    </div>
+    <div class="form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="exampleCheck1"
+        name="termsConditions"
+        ngModel
+        required
+      />
+      <label class="form-check-label" for="exampleCheck1"
+        >Agree to Terms and Condtions</label
+      >
+    </div>
+    <div class="form-group">
+      <input
+        type="radio"
+        class="form-input"
+        id="genderField"
+        value="male"
+        name="genderField"
+        ngModel
+      />
+      <label class="form-check-label" for="genderCheck">Male</label>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="radio"
+        class="form-input"
+        id="genderField"
+        value="female"
+        name="genderField"
+        ngModel
+      />
+      <label class="form-check-label" for="genderCheck">Female</label>
+    </div>
+
+    <div class="form-group">
+      <label for="textarea">Notes :</label>
+      <textarea
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter anything here"
+        name="Notes"
+        ngModel
+      ></textarea>
+    </div>
+    <br />
+    <div class="form">
+      <label for="dropdown">City : </label>
+      <select
+        name="dropdown"
+        id="Nagar"
+        class="city"
+        required
+        ngModel
+        #dropdown="ngModel"
+      >
+        <option selected disabled>Select city</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Tumkur">Tumkur</option>
+        <option value="Kadaba">Kadaba</option>
+        <option value="Gubbi">Gubbi</option>
+      </select>
+      <br />
+      <small
+        id="message"
+        class="form-text text-muted"
+        *ngIf="dropdown.touched && !dropdown.valid"
+        >Please select dropdown.</small
+      >
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      id="submit"
+      [disabled]="!signInForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

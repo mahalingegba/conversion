@@ -1,0 +1,190 @@
+<div class="container">
+  <h4 class="pb-2">Reactive Forms</h4>
+  <form [formGroup]="checkoutForm" (ngSubmit)="postData()">
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail3"
+          placeholder="Email"
+          formControlName="emailAdress"
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            checkoutForm.get('emailAdress').touched &&
+            checkoutForm.get('emailAdress').hasError('required')
+          "
+          >Please Enter Email Adress.</span
+        >
+        <span
+          class="text-danger"
+          *ngIf="
+            checkoutForm.get('emailAdress').touched &&
+            checkoutForm.get('emailAdress').hasError('email')
+          "
+          >Please Enter valid Email Adress.</span
+        >
+        <span
+          class="text-danger"
+          *ngIf="
+            checkoutForm.get('emailAdress').touched &&
+            checkoutForm.get('emailAdress').hasError('minlength')
+          "
+          >Please Enter min 5 characters.</span
+        >
+      </div>
+    </div>
+    <br />
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label"
+        >Password</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword3"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <span
+          class="text-danger"
+          *ngIf="
+            checkoutForm.get('password').touched &&
+            checkoutForm.get('password').hasError('required')
+          "
+          >Please Enter Password.</span
+        >
+      </div>
+    </div>
+    <!-- <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gridRadios"
+              id="gridRadios1"
+              value="option1"
+              checked
+            />
+            <label class="form-check-label" for="gridRadios1">
+              First radio
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gridRadios"
+              id="gridRadios2"
+              value="option2"
+            />
+            <label class="form-check-label" for="gridRadios2">
+              Second radio
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gridRadios"
+              id="gridRadios3"
+              value="option3"
+              disabled
+            />
+            <label class="form-check-label" for="gridRadios3">
+              Third disabled radio
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset> -->
+    <br />
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label"
+        >Items :</label
+      >
+      <div class="col-sm-10" formArrayName="items">
+        <div
+          *ngFor="
+            let item of checkoutForm.controls.items['controls'];
+            let i = index
+          "
+          [formGroupName]="i"
+        >
+          <a [routerLink] (click)="removeItem(i)">Remove Item</a>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="itemId"
+            id="task{{ i }}"
+          />
+          <input
+            class="form-control"
+            type="text"
+            formControlName="itemName"
+            id="task{{ i }}"
+          />
+          <input
+            class="form-control"
+            type="text"
+            formControlName="itemName"
+            id="task{{ i }}"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="gridCheck1"
+            formControlName="terms"
+          />
+          <label class="form-check-label" for="gridCheck1">
+            Agree to Terms and conditions.
+          </label>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="form-group row">
+      <div class="col-sm-2">
+        <button
+          type="submit"
+          id="signIn"
+          class="btn btn-primary"
+          [disabled]="!checkoutForm.valid"
+        >
+          Sign in
+        </button>
+        <button
+          type="submit"
+          id="reset"
+          class="btn btn-primary"
+          (click)="resetForm()"
+        >
+          Reset
+        </button>
+        <button
+          type="submit"
+          id="addRow"
+          class="btn btn-primary"
+          (click)="addNewRow()"
+        >
+          Add Row
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

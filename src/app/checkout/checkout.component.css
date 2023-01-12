@@ -1,0 +1,30 @@
+#signIn {
+  position: absolute;
+  margin-left: 185px;
+  float: right;
+}
+
+input.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+#textmessage {
+  color: red;
+}
+
+#reset {
+  position: relative;
+
+  margin-left: 300px;
+}
+
+#addRow {
+  position: absolute;
+  margin-left: 500px;
+  margin-bottom: 58px;
+}
+
+#remove {
+  position: absolute;
+  margin-left: 610px;
+}
